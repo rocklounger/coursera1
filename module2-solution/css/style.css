@@ -31,11 +31,15 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+body * {
+	box-sizing: border-box;
+}
 header {
 	width: 100%;
 	margin: 0 auto;
 	font-size: 32px;
 	text-align: center;
+	margin-bottom: 20px;
 }
 
 #mainContainer {
@@ -44,19 +48,17 @@ header {
 	margin: 0 auto;
 }
 
-#mainContainer div {
-	box-sizing: border-box;
-	display: inline-block;
-}
-
-#mainContainer div p{
-	clear: both;
+.section p{
+	padding: 20px;
+	margin-top: 20px;
 }
 
 .section {
 	margin-bottom: 10px;
 	background-color: gray;
 	border: 2px solid #333;
+	display: inline-block;
+	margin-right: 10px;
 }
 
 #mainContainer .title {
@@ -64,11 +66,16 @@ header {
 	padding: 5px;
 	width: 100px;
 	text-align: right;
+	border-left: 2px solid #333;	
+	border-bottom: 2px solid #333;	
+}
+
+#suchi {
+	margin-right: 0;
 }
 
 #chicken .title {
 	background-color: purple;
-	border: 2px solid #333;
 }
 
 #beef .title {
@@ -84,7 +91,7 @@ header {
 
 @media (min-width: 992px) {
 	.col-lg-4 {
-		width: 32%;
+		width: calc(33.3% - 10px);
 	}
 }
 
@@ -92,10 +99,13 @@ header {
 
 @media (min-width: 768px) AND (max-width: 991px) {
 	.col-md-6 {
-		width: 50%
+		width: calc(50.3% - 10px)
 	}
 	#suchi {
 		width: 100%
+	}
+	#beef {
+		margin-right: 0 !important;
 	}
 }
 
@@ -104,6 +114,9 @@ header {
 @media (max-width: 767px) {
     .col-xs-12	{
     	width: 100%;
+    }
+    .section {
+    	margin-right: 0 !important;
     }
 }
 
